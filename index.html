@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>kozinti</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            />
+        <script src="js/timer.js"></script>
+        <script src="js/list_image.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </head>
+    <body>
+        <!-- Start Header -->
+            <div class="header text-center">
+                <div class="overlay">
+                <div class="container"> 
+                   <div class="plan">
+                    <span>هذا <span style="color: #ff8000;"> العرض الخاص</span> سوف ينتهي قريباً</span>
+                    <span style="color: #ff8000;">40% تخفيض</span>
+                   </div>
+                   <div class="plan demo">
+                    <span id="seconds"  class="timer"></span>
+                    <span id="minutes" class="timer"></span>
+                    <span id="houres" class="timer"></span>
+                   </div>
+                </div>
+            </div>
+            </div>
+            <div class="main">
+                <div class="container">
+                    <h1 style="color: #ff8000;">المقلاة المزدوجة المانعة للالتصاق متعددة الإستعمالات</h1>
+                    <div class="product-detile">
+                        <div class="images">
+                            <img src="/images/img.png" class="pro-img medium" alt="product" />
+                          <div class="list_image">
+                            <i class="fa fa-angle-right" aria-hidden="true" style="font-size: 30px; padding: 10px; color: #080808;"></i>
+                                <div class="list-images">
+                                <div onclick="changeImage(this)" class="container-small"> 
+                                    <img src="/images/img.png" class="small"/>
+                              </div>
+                              <div onclick="changeImage(this)" class="container-small"> 
+                                    <img src="/images/img2.png" class="small"/>
+                              </div>
+                              <div onclick="changeImage(this)"  class="container-small"> 
+                                    <img src="/images/img3.png" class="small"/>
+                              </div>
+                              <div onclick="changeImage(this)" class="container-small"> 
+                                    <img src="/images/img4.png" class="small"/>
+                              </div>
+                                </div>
+                            <i class="fa fa-angle-left" aria-hidden="true" style="font-size: 30px;padding: 10px; color: #080808;"></i>   
+                          </div>
+                        </div>
+                    </div>
+                    <div class="product-detile">
+                        <p class="discription">
+                            المقلاة العجيبة صنع إيطالي<span>®️©️™️DESSINI ORIGINAL</span>
+                          </p>
+                          <p class="discription">
+                            4 في 1 كتعوض الفران والطنجرة والمقلة ديال الزيت وحتى الشواية
+                          </p>
+                          <div class="price" style="margin-bottom: 10px;">389DH <del style="font-size: 20px; font-weight: 300; color: red;">549DH</del></div>
+                          <div class="bottunn" style="cursor: pointer;"><a href="#form" style="text-decoration: none;color: aliceblue;"> أطلب الآن </a></div>
+                          <h3>بعض خصائص:</h3>
+                          <p class="discription">
+                            تصميم ايطالي رائع بجودة عالية وصحية
+                            قابلة للتفكيك للحصول على مقلتين منفردتين 
+                          غير قابلة للالتصاق وبدون استعمال أي زيت
+                          يد مغناطيسية لاحكام الغلق بأمان
+                          فتحة صغيرة لتنفيس المقلاة من الضغط
+                          مقاس عائلي 36 سنتيمتر
+                          شريط اضافي من السليكون 
+                          سهلة التنظيف
+                          </p>
+                    </div>
+                    <div class="container">
+                        <div class="form" id="form">
+                            <h3 style="color: #ff8000; font-size:28px;">إملئ الإستمارة لتأكيد الطلب</h3>
+                            <div class="register-form">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                        <div class="form-group">
+                                            <input type="text" name="Name" class="form-control" placeholder="الإسم الكامل" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="Adress" class="form-control" placeholder="المدينة والعنوان" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" name="Phone" class="form-control" placeholder="رقم الهاتف" value="" required=""/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="submit" class="btn-block Span" style="cursor: pointer;" value="تسجيل الطلب" />
+                                        </div>
+                                    </form>
+                    </div>
+                </div>
+                    </div>
+            </div>
+              <footer class="footer">
+                <div class="container text-center">
+                    <p>
+                    <span class="footer-text"> للإستفسار أو للطلب على الواتساب </br></span>
+                    <i class="fa fa-whatsapp" aria-hidden="true" style="color: rgb(61, 214, 82); font-size: 30px;"></i>
+                    <span><a href="https://wa.me/0608266870" style="color:rgb(61, 214, 82); font-size: 30px;">0608266870</a></span>
+                    </p>
+                </div>
+              </footer>
+        <!-- End Header -->
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzfghk3vV1LnClLRc1W5iBkyKFyq5JkD2CVl4arUSHKg1ySha1Fm-g6Lv43FKthK-rO/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response =>  swal("شكرا على طلبك! سيتصل بك هاتفيا فريقنا للتاكيد طلبك")
+                )
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </body>
+</html>
